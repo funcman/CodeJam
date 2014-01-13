@@ -26,3 +26,9 @@ funcman的代码涂鸦
 	
 	一份值得阅读的教程：[node.js extensions
 with C++ and V8](http://kkaefer.github.com/node-cpp-modules/)。
+
++	2014011401
+
+	写一个优雅的Qt控制台程序
+
+	参考自[How do I create a simple Qt console application in C++?](http://stackoverflow.com/questions/4180394/how-do-i-create-a-simple-qt-console-application-in-c)
