@@ -1,0 +1,10 @@
+{
+  "name":   "node-webkit demo",
+  "main":   "index.html",
+  "window": {
+    "toolbar":     false,
+    "width":       320,
+    "height":      240,
+    "resizable":   false
+  }
+}

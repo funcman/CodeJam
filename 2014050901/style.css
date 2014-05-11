@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("./img/background.gif") repeat;
+}
+
+#version {
+  position: fixed;
+  left: 2px;
+  top: 2px;
+  text-shadow:
+    1px   1px  2px  #FFF,
+    -1px  1px  2px  #FFF,
+    1px   -1px 2px  #FFF,
+    -1px  -1px 2px  #FFF;
+}
+
+#description {
+  position: fixed;
+  left: 2px;
+  bottom: 2px;
+  text-shadow:
+    1px   1px  2px  #FFF,
+    -1px  1px  2px  #FFF,
+    1px   -1px 2px  #FFF,
+    -1px  -1px 2px  #FFF;
+  font-size: 12px;
+}
+
+#input {
+  position: fixed;
+  left: 40px;
+  top: 80px;
+  width: 160px;
+  height: 58px;
+  border: 1px solid;
+  font-size: 56px;
+  ime-mode: disabled;
+  /*-webkit-ime-mode: disabled;*/
+}
+
+#think {
+  position: fixed;
+  left: 220px;
+  top: 80px;
+  width: 60px;
+  height: 60px;
+  background-image: url("./img/sqrt.png");
+  background-size: 60px 60px;
+  cursor: pointer;
+}
+
+#face {
+  position: fixed;
+  right: 2px;
+  bottom: 2px;
+}

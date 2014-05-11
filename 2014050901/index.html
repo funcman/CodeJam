@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>node-webkit demo</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <script type="text/javascript">
+        function doit() {
+            var demolib = require('./lib/demolib');
+            var inp = document.getElementById("input");
+            if ( inp.value!="" ) {
+                alert(inp.value+"的平方根是"+demolib.newtonSqrt(parseFloat(inp.value))+"。");
+            }else {
+                alert("请输入数字！");
+                inp.focus();
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <div id="version">This demo is running on node.js <script>document.write(process.version)</script> and node-webkit v<script>document.write(process.versions['node-webkit'])</script>.</div>
+    <div id="description">这是一个求平方根的小程序，请输入数字（支持小数点）。</div>
+    <input id="input" onKeyPress="if((event.keyCode!=46)&&(event.keyCode<48||event.keyCode>57))event.returnValue=false;" onKeyUp="v=this.value.replace(/[^\d.]/g,'');if(this.value!=v)this.value=v;" onKeyDown="if(event.keyCode=='13')doit();" />
+    <div id="think" onClick="doit()"></div>
+    <canvas id="face" width="2" height="2"></canvas>
+    <script type="text/javascript">
+        var demolib = require('./lib/demolib');
+        var canvas = document.getElementById("face");
+        canvas.getContext("2d").fillStyle = "#FF0000";
+        canvas.getContext("2d").fillRect(0, 0, 2, 2);
+        var screen = canvas.getContext("2d").getImageData(0, 0, 2, 2);
+        function myInterval() {
+          demolib.drawSomething(screen.data);
+          canvas.getContext("2d").putImageData(screen, 0, 0);
+        }
+        setInterval("myInterval()", 40);
+    </script>
+  </body>
+</html>
